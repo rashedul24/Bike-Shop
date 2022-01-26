@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import './Banner.css'
 import bannerImg from '../../../Images/bicycle-banner.jpg';
+import { NavLink } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -13,7 +14,10 @@ const Banner = () => {
 
                         <div className="text-center">
                             <h1 className="banner-title">Electronic Wheeler</h1>
-                            <p className="fs-3">Machine That Boost Up Your Daily Life</p>
+                            <p className="fs-3">A Machine, That Boost Up Your Daily Life</p>
+           <NavLink to="/products">
+           <Button>Shop Now</Button>
+           </NavLink>
                         </div>
 
                     </Col>
