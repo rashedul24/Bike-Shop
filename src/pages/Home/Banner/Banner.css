@@ -1,0 +1,12 @@
+  .banner-bg{
+    background-image: url('https://s3.amazonaws.com/assetsawardsco/1/12/cycling_banner.jpg?446719');
+    background-size: cover;
+    height: 580px;
+}  
+ .banner-title{
+    font-size: 65px;
+    font-weight: 700;
+    color: crimson;
+    margin-top: 35px;
+    font-style: italic;
+}
