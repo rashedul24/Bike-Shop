@@ -1,0 +1,83 @@
+[
+    {
+      "_id": "1",
+      "name": "Ghost Hybride ASX",
+      "img": "https://cdn.hibike.com/image/product/EMTF/EMTF_Gh19ASXE6_br_Hybride_ASX_Essential_160_MJ21-is.jpg",
+      "description": "Ghost Hybride ASX Essential 160 29_/_27.5+ E- bike MTB bike size_L",
+      "price": "260"
+    },
+    {
+      "_id": "2",
+      "name": "E-Roadbikes",
+      "img": "https://cdn.hibike.com/image/product/ERRD/ERRD_TK1DOPA_49-ro-sw_Domane_ALR_MJ21-is.jpg",
+      "description": "Trek Domane+ ALR 28 E-Bike size_56cm_crimson_red/trek_black",
+      "price": "275"
+    },
+    {
+      "_id": "3",
+      "name": "E-MTB Hardtails",
+      "img": "https://cdn.hibike.com/image/product/EMTH/EMTH_Gh19TERA_ro_E-Teru_Advanced_MJ21-is.jpg",
+      "description": "Ghost E-Teru Advanced 29 E- bike MTB bike size_M crazycher/jet_black",
+      "price": "220"
+    },
+    {
+      "_id": "4",
+      "name": "Fatbikes",
+      "img": "https://cdn.hibike.com/image/product/MTH/MTH_Sa27BECD_BK5145-00-is.jpg",
+      "description": "Salsa Beargrease carbon Deore 27.5 bike bike",
+      "price": "300"
+    },
+    {
+      "_id": "5",
+      "name": "Dual/Dirt Hardtails",
+      "img": "https://cdn.hibike.com/image/product/MTH/MTH_Dm26SEC_DMR-BIKE-SECT26-EB-00-is.jpg",
+      "description": "DMR Sect 26 Dirtjump bike unisize",
+      "price": "350"
+    },
+    {
+      "_id": "6",
+      "name": "Bikes For Kids",
+      "img": "https://cdn.hibike.com/image/product/KID/KID_Tk0YPC16_uni-or_Precaliber_16_Boy_MJ20-is.jpg",
+      "description": "Trek Precaliber 16 16 bike kids unisize",
+      "price": "320"
+    }
+    ,
+    {
+      "_id": "7",
+      "name": "DH Full Suspension",
+      "img": "https://cdn.hibike.com/image/product/MTF/MTF_Tk29SES8_sw_Session_8_GX_MJ22_-is.jpg",
+      "description": "Trek Session 8 GX 29 bike",
+      "price": "280"
+    },
+    {
+      "_id": "8",
+      "name": "E-Bikes / Pedelecs",
+      "img": "https://cdn.hibike.com/image/product/ETBH/ETBH_Se1VAD4_95020-59-is.jpg",
+      "description": "Specialized Turbo Vado 4.0 28 E- bike trekking bike",
+      "price": "480"
+    },
+    {
+      "_id": "9",
+      "name": "City- & Trekkingbikes",
+      "img": "https://cdn.hibike.com/image/product/TBH/TBH_Se2SIR2Q_90921-82--is.jpg",
+      "description": "Specialized Sirrus 2.0 EQ 28 Fitness bike",
+      "price": "340"
+    },
+    {
+      "_id": "10",
+      "name": "E-Cargo bikes",
+      "img": "https://cdn.hibike.com/image/product/ELST/ELST_Ur1FACL_sw_Family_Cargo_Line_MJ21-is.png",
+      "description": "Urban Arrow Family Bosch Cargo Line E- bike Lastenwheel 500Wh",
+      "price": "510"
+    },
+    {
+      "_id": "11",
+      "name": "Triathlon Bikes",
+      "img": "https://cdn.hibike.com/image/product/TRI/TRI_Se0SWSHD_sw_SW_Shiv_DI2_MJ20-is.jpg",
+      "description": "Specialized S-Works Shiv disc Shimano Dura Ace Di2 28 Triathlon bike satin carbon/gloss",
+      "price": "400"
+    }
+    
+    
+  ]
+  

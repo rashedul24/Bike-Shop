@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home/Home/Home';
 import Products from './pages/Products/Products';
 
+
 function App() {
   return (
     <div className="">
@@ -14,6 +15,7 @@ function App() {
       </Route>
       <Route path="/products" element={<Products />}>
       </Route>
+      
     </Routes>
   </Router>
     </div>
