@@ -17,8 +17,12 @@ const Header = () => {
             <Navbar.Collapse className="justify-content-center fs-5">
               <Nav.Link as={Link} to="/home">Home</Nav.Link>
               <Nav.Link as={Link} to="/products">Products</Nav.Link>
+              {user?.email && <Nav.Link as={Link} to="/dashBoard">Dashboard</Nav.Link>}
           {user?.email ?
            <div>
+             <div>
+               
+             </div>
              <Button onClick={logOut} className="me-2" variant="warning">Logout</Button> 
            <Navbar.Text>
              <a className="text-decoration-none fst-italic fs-2" href="#login">Signed in as: {user?.displayName} 
