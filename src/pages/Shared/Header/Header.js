@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import { faBicycle, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faBicycle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useAuth from "../../../hooks/useAuth";
 
@@ -18,13 +18,17 @@ const Header = () => {
               <Nav.Link as={Link} to="/home">Home</Nav.Link>
               <Nav.Link as={Link} to="/products">Products</Nav.Link>
           {user?.email ?
-           <Button onClick={logOut} className="me-2" variant="warning">Logout</Button> :
-            <Nav.Link as={Link} to="/Login">Login</Nav.Link>}
-              <Navbar.Text>
-            Signed in as: <a className="text-decoration-none fst-italic fs-2" href="#login">{user?.displayName} 
+           <div>
+             <Button onClick={logOut} className="me-2" variant="warning">Logout</Button> 
+           <Navbar.Text>
+             <a className="text-decoration-none fst-italic fs-2" href="#login">Signed in as: {user?.displayName} 
             <img className="rounded-circle ms-3" src={user.photoURL} alt="" />
             </a>
               </Navbar.Text>
+           </div>
+           :
+            <Nav.Link as={Link} to="/Login">Login</Nav.Link>}
+              
             </Navbar.Collapse>
           </Container>
         </Navbar>
