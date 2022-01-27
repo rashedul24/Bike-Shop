@@ -30,7 +30,7 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert('Tour Booked')
+          alert('Order Booked')
           reset()
        }
       });

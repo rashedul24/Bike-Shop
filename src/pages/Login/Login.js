@@ -1,23 +1,46 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Col, Container, Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
+import { useLocation } from 'react-router';
+import { useForm } from "react-hook-form";
+import { Link , useNavigate} from 'react-router-dom';
+import Header from '../Shared/Header/Header';
 
 const Login = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { signInUsingGoogle } = useAuth();
-  const handleGoogleLogin = () => {
-    signInUsingGoogle()
-    .then((result) => {
-       navigate(location.state?.from || '/')
-    });
-  }
-  return (
-    <div  className='text-center'>
-            <h1 >Please Login</h1>
-            <button onClick={handleGoogleLogin}  className='btn btn-primary my-4' >Sign In with Google</button>
+    const { handleUserLogin, error } = useAuth();
+    const Navigate = useNavigate();
+    const location = useLocation();
+
+    const { register, handleSubmit } = useForm();
+    const onSubmit = (data) => {
+        handleUserLogin(data.email, data.password, location, Navigate)
+
+    };
+
+    return (
+        <div className="pt-2">
+            <Header/>
+            <Container>
+                <Row className="pt-3 text-center">
+                    <Col md={2} lg={3}></Col>
+                    <Col xs={12} md={8} lg={5}>
+                        <div className="shadow px-4 py-4 mt-5">
+                            <h1 className="text-center pb-5 pt-3 fst-italic text-primary">
+                                Please Login Here
+                            </h1>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <input className="form-control" type="email" {...register("email")} placeholder="Email address" /> <br />
+                                <input className="form-control" type="password" {...register("password")} placeholder="Password" /> <br />
+                                <input className="btn btn-success btn-lg px-5 rounded" type="submit" value="Login" />
+                            </form>
+                            <p className="text-center pt-3 text-danger">{error}</p>
+                            <p className="mt-5 text-center">New User? <Link to="/register">Register here!</Link></p>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
-  );
+    );
 };
 
 export default Login;
