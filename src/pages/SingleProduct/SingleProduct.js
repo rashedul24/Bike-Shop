@@ -12,7 +12,7 @@ const SingleProduct = ({product}) => {
       <h1 className="mt-3">{name}</h1>
       <p className='px-3'>{description}</p>
       <h3>${price}</h3>
-      <Link to={`/singleTour/${_id}`}>
+      <Link to={`/products/${_id}`}>
         <button className="btn my-3 btn-info">Order Now</button>
       </Link>
      </Card>
