@@ -2,20 +2,25 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../Shared/Header/Header';
 
 
 const Register = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const { handleUserRegister, error } = useAuth();
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const newUser = { email: data.email, name: data.name }
-        handleUserRegister(data.email, data.password, data.name);
+        handleUserRegister(data.email, data.password, data.name) ;
         axios.post('http://localhost:5000/users', newUser)
+        .then(result=>{
+            navigate(location.state?.from || '/')
+        })
 
     };
 
@@ -37,17 +42,17 @@ const Register = () => {
                                     className="form-control  input-field"
                                     name="name"
                                     type="text" {...register("name")}
-                                    placeholder="Name" /> <br />
+                                    placeholder="Name" required/> <br />
                                 <input
                                     className="form-control"
                                     name="email"
                                     type="email" {...register("email")}
-                                    placeholder="Email address" /> <br />
+                                    placeholder="Email address" required/> <br />
                                 <input
                                     className="form-control"
                                     name="password"
                                     type="password" {...register("password")}
-                                    placeholder="Password" /> <br />
+                                    placeholder="Password" required /> <br />
                                 <input
                                     className="btn btn-success btn-lg px-5"
                                     type="submit"

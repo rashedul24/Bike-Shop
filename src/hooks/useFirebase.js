@@ -41,6 +41,7 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 setError(error.message);
+                
             })
             .finally(() => {
                 setIsLoading(false)
@@ -50,7 +51,7 @@ const useFirebase = () => {
 
     const handleUserLogin = (email, password) => {
         setIsLoading(true);
-        signInWithEmailAndPassword(auth, email, password)
+        return signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
               
             })
@@ -61,7 +62,6 @@ const useFirebase = () => {
                 setIsLoading(false)
             })
     };
-    
     // observer
 
     useEffect(() => {
