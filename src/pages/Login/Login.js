@@ -1,19 +1,17 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
-import { useLocation } from 'react-router';
 import { useForm } from "react-hook-form";
-import { Link , useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../Shared/Header/Header';
 
 const Login = () => {
     const { handleUserLogin, error } = useAuth();
-    const Navigate = useNavigate();
-    const location = useLocation();
+    
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        handleUserLogin(data.email, data.password, location, Navigate)
+        handleUserLogin(data.email, data.password)
 
     };
 
@@ -26,7 +24,7 @@ const Login = () => {
                     <Col xs={12} md={8} lg={5}>
                         <div className="shadow px-4 py-4 mt-5">
                             <h1 className="text-center pb-5 pt-3 fst-italic text-primary">
-                                Please Login Here
+                                Login Here
                             </h1>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input className="form-control" type="email" {...register("email")} placeholder="Email address" /> <br />

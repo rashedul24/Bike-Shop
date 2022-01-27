@@ -21,7 +21,7 @@ const useFirebase = () => {
             })
     }
 
-    const handleUserRegister = (email, password, name, location) => {
+    const handleUserRegister = (email, password, name) => {
 
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -48,12 +48,11 @@ const useFirebase = () => {
     };
 
 
-    const handleUserLogin = (email, password, location, navigate) => {
+    const handleUserLogin = (email, password) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                // const redirect_url = location?.state?.from || '/';
-                // Navigate(redirect_url)
+              
             })
             .catch((error) => {
                 setError(error.message);
@@ -62,6 +61,8 @@ const useFirebase = () => {
                 setIsLoading(false)
             })
     };
+    
+    // observer
 
     useEffect(() => {
         onAuthStateChanged(auth, user => {

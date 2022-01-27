@@ -15,8 +15,8 @@ const Banner = () => {
                         <div className="text-center">
                             <h1 className="banner-title">Electronic Wheeler</h1>
                             <p className="fs-3">A Machine, That Boost Up Your Daily Life</p>
-           <NavLink to="/products">
-           <Button>Shop Now</Button>
+           <NavLink to="/allProducts">
+           <Button className='fst-italic fs-4'>Shop Now</Button>
            </NavLink>
                         </div>
 
