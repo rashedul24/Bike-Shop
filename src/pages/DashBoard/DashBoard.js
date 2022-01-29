@@ -38,7 +38,7 @@ const drawerWidth = 240;
 function DashBoard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const {logOut}=useAuth();
+  const {logOut, admin}=useAuth();
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -51,6 +51,11 @@ function DashBoard(props) {
       </Toolbar>
       <Divider />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Link className='ms-4 text-decoration-none fs-5'  to={`${url}`}>Dashboard Home</Link>
           <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/myOrder`}>My Order</Link>
@@ -60,26 +65,21 @@ function DashBoard(props) {
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/review`}>Review</Link>
           <br />
           
-      <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/addAdmin`}>Add Admin</Link>
+      {admin && <Box>
+        <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/addAdmin`}>Add Admin</Link>
           <br />
       <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/addProduct`}>Add Product</Link>
           <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/manageProduct`}>Manage Product</Link>
           <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/manageOrders`}>Manage Orders</Link>
+      </Box>
+
+      }
           <br />
           <Button onClick={logOut} className='m-4' variant="contained">Log Out</Button>
       
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+    
       
     </div>
   );
