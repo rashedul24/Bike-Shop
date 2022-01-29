@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
 import AddProduct from './pages/DashBoard/AddProduct/AddProduct';
@@ -17,29 +17,38 @@ function App() {
     <div className="">
       <AuthProvider>
       <Router>
-    <Routes>
-      <Route path="/" element={<Home />}>
+    <Switch>
+      <Route exact path="/" >
+      <Home />
       </Route>
-      <Route path="/home" element={<Home />}>
+      <Route path="/home" >
+      <Home />
       </Route>
-      <Route path="/allProducts" element={<Products />}>
+      <Route path="/allProducts" >
+      <Products />
       </Route>
-      <Route path="/products/:id" element={<PrivateRoute><ProductDetails /></PrivateRoute>}>
-      </Route>
+      <PrivateRoute path="/products/:id" >
+      <ProductDetails />
+      </PrivateRoute>
       
-      <Route path="/login" element={<Login />}>
+      <Route path="/login" >
+      <Login />
       </Route>
-      <Route path="/register" element={<Register />}>
+      <Route path="/register" >
+      <Register />
       </Route>
-      <Route path="/addProduct" element={<AddProduct />}>
+      <Route path="/addProduct" >
+      <AddProduct />
       </Route>
-      <Route path="/dashboard" element={<PrivateRoute><DashBoard /></PrivateRoute>}>
-      </Route>
+      <PrivateRoute path="/dashboard" >
+      <DashBoard />
+      </PrivateRoute>
 
-      <Route path="*" element={<NotFound />}>
+      <Route path="*" >
+      <NotFound />
       </Route>
       
-    </Routes>
+    </Switch>
   </Router>
       </AuthProvider>
     </div>

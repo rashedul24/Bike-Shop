@@ -5,6 +5,7 @@ import initializeAuthentication from "../pages/Login/Firebase/firebase.init";
 
 initializeAuthentication()
 
+
 const useFirebase = () => {
 
     const [user, setUser] = useState({});
@@ -21,7 +22,7 @@ const useFirebase = () => {
             })
     }
 
-    const handleUserRegister = (email, password, name) => {
+    const handleUserRegister = (email, password, name, location, history) => {
 
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -37,23 +38,8 @@ const useFirebase = () => {
                 }).catch((error) => {
                     setError(error.message);
                 });
-                
-            })
-            .catch((error) => {
-                setError(error.message);
-                
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
-    };
-
-
-    const handleUserLogin = (email, password) => {
-        setIsLoading(true);
-        return signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
               
+                history.replace(location?.state?.from || '/')
             })
             .catch((error) => {
                 setError(error.message);
@@ -62,8 +48,22 @@ const useFirebase = () => {
                 setIsLoading(false)
             })
     };
-    // observer
 
+
+    const handleUserLogin = (email, password, location, history) => {
+        setIsLoading(true);
+        signInWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+                history.replace(location?.state?.from || '/')
+            })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
+    };
+    //  observer
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {

@@ -1,30 +1,28 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Header from '../Shared/Header/Header';
 
 const Login = () => {
     const location = useLocation();
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const { handleUserLogin, error, googleSignIn} = useAuth();
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
         
-        handleUserLogin(data.email, data.password)
-        .then(result=>{
-            navigate(location.state?.from || '/')
-        })
+        handleUserLogin(data.email, data.password,location, history)
+    
     };
 
     const handleGoogleLogin=()=>{
         googleSignIn()
         .then(result=>{
 
-            navigate(location.state?.from || '/')
+            history.push(location.state?.from || '/')
         })
     }
 
