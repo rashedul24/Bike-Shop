@@ -1,6 +1,7 @@
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
+import { Button } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -22,14 +23,22 @@ import {
     Route,
     useParams,
   } from "react-router-dom";
+import useAuth from '../../hooks/useAuth';
+import AddAdmin from './AddAdmin/AddAdmin';
+import AddProduct from './AddProduct/AddProduct';
 import DashboardHome from './DashboardHome/DashboardHome';
+import ManageOrders from './ManageOrders/ManageOrders';
+import ManageProduct from './ManageProduct/ManageProduct';
+import MyOrder from './MyOrder/MyOrder';
+import Payment from './Payment/Payment';
+import Review from './Review/Review';
 
-const drawerWidth = 200;
+const drawerWidth = 240;
 
 function DashBoard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const {logOut}=useAuth();
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -40,10 +49,27 @@ function DashBoard(props) {
       <Toolbar >
           <Link to="/">Back to Home</Link>
       </Toolbar>
-      <Link  to={`${url}`}>Dashboard</Link>
-      <Link  to={`${url}/makeAdmin`}>Make an Admin</Link>
-      <Link  to={`${url}/addProduct`}>Add Product</Link>
       <Divider />
+      <br />
+      <Link className='ms-4 text-decoration-none fs-5'  to={`${url}`}>Dashboard Home</Link>
+          <br />
+          <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/myOrder`}>My Order</Link>
+          <br />
+          <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/payment`}>Payment</Link>
+          <br />
+          <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/review`}>Review</Link>
+          <br />
+          
+      <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/addAdmin`}>Add Admin</Link>
+          <br />
+      <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/addProduct`}>Add Product</Link>
+          <br />
+          <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/manageProduct`}>Manage Product</Link>
+          <br />
+          <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/manageOrders`}>Manage Orders</Link>
+          <br />
+          <Button onClick={logOut} className='m-4' variant="contained">Log Out</Button>
+      
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
@@ -124,11 +150,31 @@ function DashBoard(props) {
         <Toolbar />
 
         <Switch>
-        <Route  path={`${path}`} element={  <DashboardHome/>}>
+
+        <Route exact  path={path} >
+        <DashboardHome/>
         
         </Route>
-        <Route path={`${path}/makeAdmin`}>
-          
+        <Route path={`${path}/myOrder`}>
+          <MyOrder/>
+        </Route>
+        <Route path={`${path}/payment`}>
+          <Payment/>
+        </Route>
+        <Route path={`${path}/review`}>
+          <Review/>
+        </Route>
+        <Route path={`${path}/addAdmin`}>
+          <AddAdmin/>
+        </Route>
+        <Route path={`${path}/addProduct`}>
+          <AddProduct/>
+        </Route>
+        <Route path={`${path}/manageProduct`}>
+          <ManageProduct/>
+        </Route>
+        <Route path={`${path}/manageOrders`}>
+          <ManageOrders/>
         </Route>
       </Switch>
     
