@@ -24,6 +24,7 @@ import {
     useParams,
   } from "react-router-dom";
 import useAuth from '../../hooks/useAuth';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
 import AddAdmin from './AddAdmin/AddAdmin';
 import AddProduct from './AddProduct/AddProduct';
 import DashboardHome from './DashboardHome/DashboardHome';
@@ -50,7 +51,6 @@ function DashBoard(props) {
           <Link to="/">Back to Home</Link>
       </Toolbar>
       <Divider />
-      <br />
       <br />
       <br />
       <br />
@@ -164,18 +164,18 @@ function DashBoard(props) {
         <Route path={`${path}/review`}>
           <Review/>
         </Route>
-        <Route path={`${path}/addAdmin`}>
+        <AdminRoute path={`${path}/addAdmin`}>
           <AddAdmin/>
-        </Route>
-        <Route path={`${path}/addProduct`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/addProduct`}>
           <AddProduct/>
-        </Route>
-        <Route path={`${path}/manageProduct`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manageProduct`}>
           <ManageProduct/>
-        </Route>
-        <Route path={`${path}/manageOrders`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manageOrders`}>
           <ManageOrders/>
-        </Route>
+        </AdminRoute>
       </Switch>
     
       </Box>
