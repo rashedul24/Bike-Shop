@@ -19,7 +19,7 @@ const MyOrder = () => {
             {
                 myOrders.map(order=>(<div
                 key={order._id}
-                    className='col-md-6 col-sm-12'
+                    className='col-md-4 col-sm-12'
 
                 >
                     <Card className='text-center p-5 m-3 shadow ' >
