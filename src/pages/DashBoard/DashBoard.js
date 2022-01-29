@@ -48,35 +48,37 @@ function DashBoard(props) {
   const drawer = (
     <div>
       <Toolbar >
-          <Link to="/">Back to Home</Link>
+          <Link to="/"><button className='btn btn-success'>Back to Home</button></Link>
       </Toolbar>
       <Divider />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <br /> <br />
+      <br /> <br />
       <Link className='ms-4 text-decoration-none fs-5'  to={`${url}`}>Dashboard Home</Link>
-          <br />
-          <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/myOrder`}>My Order</Link>
-          <br />
+          <br /> <br /> 
+          <Link className='ms-4  text-decoration-none fs-5'  to={`${url}/myOrder`}>My Order</Link>
+          <br /> <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/payment`}>Payment</Link>
-          <br />
+          <br /> <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/review`}>Review</Link>
-          <br />
+          <br /> <br />
           
       {admin && <Box>
+        <Divider />
+        <br />
+        <h3 className='ms-4 fst-italic text-warning'>Admin Panel</h3>
+        <Divider />
+        <br />
         <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/addAdmin`}>Add Admin</Link>
-          <br />
+          <br /> <br />
       <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/addProduct`}>Add Product</Link>
-          <br />
+          <br /> <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/manageProduct`}>Manage Product</Link>
-          <br />
+          <br /> <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/manageOrders`}>Manage Orders</Link>
       </Box>
 
       }
-          <br />
+          <br /> 
           <Button onClick={logOut} className='m-4' variant="contained">Log Out</Button>
       
     
