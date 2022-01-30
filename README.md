@@ -1,6 +1,6 @@
-# Travel and Delight
+# Bike Shop
 
-Best Service is our commitment to clients.
+Best Product and service is our commitment to clients.
 
 Live site : https://bike-shop-d7d4c.web.app/
 
