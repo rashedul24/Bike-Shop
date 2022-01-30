@@ -12,7 +12,7 @@ const WhyUs = () => {
   const cart = <FontAwesomeIcon icon={faCartPlus} />;
   const shield = <FontAwesomeIcon icon={faUserShield} />;
     return (
-        <div>
+        <div className='body'>
             <h1 className='text-success text-center fst-italic my-4'>Why  Us</h1>
             <div className="row us ">
         <div className="col-lg-4 col-sm-12">

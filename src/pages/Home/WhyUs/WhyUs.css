@@ -2,6 +2,11 @@
     margin: 0 auto;
     background-color: rgb(220, 220, 224);
     border-radius: 15px;
+}
+
+.body{
+      overflow-x: hidden;
+
   }
   .logo{
       font-size: 35px;
