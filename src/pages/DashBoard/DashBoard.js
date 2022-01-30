@@ -53,13 +53,17 @@ function DashBoard(props) {
       <Divider />
       <br /> <br />
       <br /> <br />
-      <Link className='ms-4 text-decoration-none fs-5'  to={`${url}`}>Dashboard Home</Link>
+      {!admin &&
+        <Box>
+          <Link className='ms-4 text-decoration-none fs-5'  to={`${url}`}>Dashboard Home</Link>
           <br /> <br /> 
           <Link className='ms-4  text-decoration-none fs-5'  to={`${url}/myOrder`}>My Order</Link>
           <br /> <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/payment`}>Payment</Link>
           <br /> <br />
           <Link className='ms-4 text-decoration-none fs-5'  to={`${url}/review`}>Review</Link>
+        </Box>      
+      }
           <br /> <br />
           
       {admin && <Box>

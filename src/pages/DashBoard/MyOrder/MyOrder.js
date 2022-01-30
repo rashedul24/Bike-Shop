@@ -12,6 +12,26 @@ const MyOrder = () => {
         setMyOrders(data.filter(myOrder=>myOrder.email === user.email))
       });
   }, []);
+  const handleDelete = (id) => {
+    const permit = window.confirm(
+      "Are you sure? Deleted data can not retrieve."
+    );
+    if (permit) {
+      const url = `https://sheltered-gorge-68070.herokuapp.com/orders/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount) {
+            alert("Deleted Successfully");
+            const rest = myOrders.filter((myOrder) => myOrder._id !== id);
+            setMyOrders(rest);
+          }
+        });
+    }
+  };
     return (
         <div>
             <h1 className="text-primary text-center my-4 fst-italic">My Orders</h1>
@@ -29,6 +49,12 @@ const MyOrder = () => {
                     <h5>Email: {order.email}</h5>
                     <p>Address: {order.address}</p>
                     <h6>Number: {order.phone}</h6>
+                    <button
+            onClick={() => handleDelete(order._id)}
+            className="btn btn-danger  m-3"
+          >
+            Delete
+          </button>
                     </Card>
                 </div>))
             }
