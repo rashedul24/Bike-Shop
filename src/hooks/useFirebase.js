@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { useEffect, useState } from "react";
 import initializeAuthentication from "../pages/Login/Firebase/firebase.init";
 
 
@@ -75,7 +75,7 @@ const useFirebase = () => {
     });
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://sheltered-gorge-68070.herokuapp.com/users/${user.email}`)
         .then(res=>res.json())
         .then(data=> setAdmin(data.admin))
     }, [user.email])

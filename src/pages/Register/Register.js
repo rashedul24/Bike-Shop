@@ -1,9 +1,9 @@
+import axios from 'axios';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import useAuth from '../../hooks/useAuth';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useHistory } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import Header from '../Shared/Header/Header';
 
 
@@ -17,7 +17,7 @@ const Register = () => {
     const onSubmit = data => {
         const newUser = { email: data.email, name: data.name }
         handleUserRegister(data.email, data.password, data.name,location, history) ;
-        axios.post('http://localhost:5000/users', newUser)
+        axios.post('https://sheltered-gorge-68070.herokuapp.com/users', newUser)
 
     };
 

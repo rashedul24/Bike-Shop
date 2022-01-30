@@ -1,12 +1,12 @@
 import { Card } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { RatingView } from 'react-simple-star-rating'
+import { RatingView } from 'react-simple-star-rating';
 
 const Feedback = () => {
     const [feedbacks, setFeedbacks]= useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/review')
+        fetch('https://sheltered-gorge-68070.herokuapp.com/review')
         .then(res => res.json())
         .then(data => setFeedbacks(data))
     },[])

@@ -8,7 +8,7 @@ const AddAdmin = () => {
     }
     const handleAddAdmin= e =>{
         const user = {email};
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://sheltered-gorge-68070.herokuapp.com/users/admin', {
             method : 'PUT',
             headers : {
                 'content-type' : 'application/json'

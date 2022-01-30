@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://sheltered-gorge-68070.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -13,7 +13,7 @@ const ManageOrders = () => {
       "Are you sure? Deleted data can not retrieve."
     );
     if (permit) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://sheltered-gorge-68070.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

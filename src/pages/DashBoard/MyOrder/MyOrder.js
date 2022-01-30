@@ -6,7 +6,7 @@ const MyOrder = () => {
     const [myOrders, setMyOrders] = useState([]);
     const{user}=useAuth();
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://sheltered-gorge-68070.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => {
         setMyOrders(data.filter(myOrder=>myOrder.email === user.email))

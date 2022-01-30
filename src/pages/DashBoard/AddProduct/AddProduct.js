@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import { useForm} from "react-hook-form";
-import './AddProduct.css'
+import { useForm } from "react-hook-form";
+import './AddProduct.css';
 
 
 
@@ -10,7 +10,7 @@ const AddProduct = () => {
   const onSubmit = data => {
     console.log(data)
 
-     axios.post('http://localhost:5000/products', data)
+     axios.post('https://sheltered-gorge-68070.herokuapp.com/products', data)
       .then(res => {
         if (res.data.insertedId) {
            alert('Product added successfully')

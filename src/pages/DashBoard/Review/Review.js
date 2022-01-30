@@ -1,7 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Rating } from 'react-simple-star-rating'
-import axios from 'axios';
+import { Rating } from 'react-simple-star-rating';
 import useAuth from '../../../hooks/useAuth';
 
 const Review = () => {
@@ -11,7 +11,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.rating = rating;
-        axios.post('http://localhost:5000/review', data)
+        axios.post('https://sheltered-gorge-68070.herokuapp.com/review', data)
             .then(result => {
                 if (result.data.insertedId) {
                     alert(
